@@ -1,0 +1,44 @@
+(Open Gcloud sdk shell)
+
+gcloud init
+y
+
+(login to your google account)
+(enter any project id like 123)
+
+gcloud init
+1
+yes
+(enter any name)
+
+
+(Open VS Code)
+(Create a folder and create a main.py file in it)
+(create a app.yaml file in that same folder)
+
+
+main.py:
+import webapp2
+class MainPage(webapp2.RequestHandler):
+	def get(self):
+		self.response.out.write("Hello World")
+
+app = webapp2.WSGIApplication([('/',MainPage)],debug=True)
+
+
+app.yaml
+runtime: python27
+threadsafe: true
+
+handlers:
+ - url: /
+   script: main.app
+
+
+(Open cloud sdk and reveal the folder location. Go to the bin folder -> dev_appserver)
+(Copy the path till \bin)
+
+(Enter the following in cloud shell)
+py <Gcloudpath>\dev_appserver.py <Path of the created folder>
+
+(There will be a local host path generated on the output. copy and pastethat on the berowser.)

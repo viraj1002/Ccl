@@ -1,0 +1,44 @@
+New
+Name of VM: pract1
+type: Linux
+Version: Ubuntu 64-bit
+Next
+Base Memory: 1024
+Next
+Hard Disk: 2nd option- use ex...
+<File icon> -> Add -> Ubuntu img
+next
+Finish
+
+(Create 2nd vm with different name using same steps)
+
+File -> Tools -> Network manager
+NAT network -> create
+
+Right click 1st VM -> settings -> network menu
+Attached to: NAT network
+
+(do above 2 lines for 2nd vm too)
+
+Login - vagrant
+psw - vagrant
+ifconfig
+
+commnds:
+
+ls
+touch filename.txt
+nano filename  (put data in file)
+  (enter any data)
+   ctrl+x -> yes -> Enter
+
+cat filename.txt
+
+scp abc.txt vagrant@10.0.2.5:/home/vagrant
+(Replace 10.0.2.5 with the net id of the 2nd vm by running the ifcofig command on it)
+enter
+yes
+
+in 2nd vm:
+ls
+(You'll see the transferred file)
